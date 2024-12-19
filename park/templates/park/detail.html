@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1 class="title1">Booking Detail</h1>
+    <div class="dcontainer">
+        <div class="empty">&nbsp;</div>
+            <div class="detail">
+                {{garage.name}}<BR>
+                {{vehicle.tag_number}}<BR>
+                From: {{booking.start_time}}<BR>
+                To: {{booking.end_time}}<BR>
+                {{booking.status}}<BR>
+                <a class="light-blue-button" href="{% url 'home' %}">Home</a>
+                <a class="light-blue-button" href="{% url 'cancel-booking' id=booking.id%}">Cancel</a>
+                {% if booking.status == "BOOKED"%}
+                    <a href="{% url 'select-vehicle' %}" class="light-blue-button">Edit</a>
+                    <a class="light-blue-button" href="{% url 'park' id=booking.id%}">Park</a>
+                {% else %}
+                    <a href="" class="light-blue-button">Edit</a>
+                    <a class="light-blue-button" href="">Park</a>
+                {% endif %}
+                {% if booking.status == "PARKED"%}
+                    <a class="light-blue-button" href="{% url 'exit' id=booking.id%}">Exit</a>
+                {% else %}
+                    <a class="light-blue-button" href="">Exit</a>
+                {% endif %}
+            </div>
+        <div class="empty">&nbsp;</div>
+    </div>
+{% endblock content%}

@@ -1,0 +1,158 @@
+.light-blue-button {
+    background-color: #69bce6;
+    border: none;
+    color: rgb(255, 255, 255);
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+	font: 1em sans-serif;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 12px;
+}
+
+.light-blue-button:hover {
+    background-color: #3f1fe2;
+}
+
+.title {
+	color: #3f1fe2;
+	text-align: center;
+	font: 2em sans-serif;
+}
+
+div.bcontainer {
+	width:100%;
+	overflow:auto;
+	text-align: center;
+}
+
+div.bcontainer div {
+	width:30%;
+	float:left;
+	cursor: pointer;
+    font: 1em sans-serif;
+    margin: 10px 10px;
+}
+
+div.bcontainer div:hover {
+    background-color: #86c5ed;
+}
+
+h1 {
+    font-size:40px;
+    font-weight:400;
+    font: 2em sans-serif;
+    background-color: #c5ced3;
+}
+
+.title1 {
+    padding-left: 20px;
+}
+
+div.scontainer {
+	width:100%;
+	overflow:auto;
+	text-align: center;
+	padding-top=20px;
+	padding-bottom=10px;
+}
+
+.selection {
+	width:30%;
+	float:left;
+	cursor: pointer;
+    font: 1em sans-serif;
+    margin: 10px 10px;
+}
+.selectiontext {
+    font: 2em sans-serif;
+    padding-left: 10px
+}
+.selection:hover {
+    border-style: solid;
+    border-color: #86c5ed;
+}
+
+.selected {
+    width:30%;
+	float:left;
+	cursor: pointer;
+    font: 1em sans-serif;
+    margin: 10px 10px;
+    border-style: solid;
+    border-color: #aff3a1;
+}
+
+div.progress {
+	width:100%;
+	overflow:auto;
+	text-align: center;
+	padding: 5px;
+}
+
+.step {
+	width:30%;
+	float:left;
+    font: 1em sans-serif;
+    margin: 10px 10px;
+    border-bottom-style: solid;
+    border-color: #66646b;
+    border-width: 5px;
+}
+
+.step1 {
+	width:30%;
+	float:left;
+    font: 1em sans-serif;
+    margin: 10px 10px;
+    border-bottom-style: solid;
+    border-color: #95cf6e;
+    border-width: 5px;
+}
+
+.errorlist {
+	padding:0;
+	margin:0;
+}
+.errorlist li{
+	color:red;
+	list-style:none;
+}
+
+.alert{
+	padding:0.5rem;
+}
+
+.alert-success{
+	background-color: #dfd
+}
+.alert-error{
+	background-color:#ba2121;
+	color:#fff;
+}
+
+div.dcontainer {
+    width:100%;
+    overflow:auto;
+    text-align: center;
+}
+
+div.dcontainer div.detail{
+    width:60%;
+    float:left;
+    font: 1em sans-serif;
+    margin: 10px 10px;
+    background-color: #eff3f7;
+    padding: 10px;
+}
+
+div.dcontainer div.empty{
+    width:10%;
+    float:left;
+    font: 1em sans-serif;
+    margin: 10px 10px;
+    padding: 10px;
+}

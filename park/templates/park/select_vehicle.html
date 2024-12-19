@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1 class="title1">Select Vehicle</h1>
+    {% if not vehicles %}
+      Add a vehicle to continue
+      <a href="{% url 'add-vehicle' %}">Add Vehicle</a>
+    {% else %}
+        <div class="progress">
+          <div class="step1">
+            Select Vehicle<BR>&nbsp;
+          </div>
+          <div class="step">
+            Select Garage<BR>&nbsp;
+          </div>
+          <div class="step">
+            Book<BR>&nbsp;
+          </div>
+        </div>
+      <form id="selectionForm" method="POST">
+        <input type="hidden" name="selectedid" id="selectedid" value="{{selected_id}}" >
+        {% csrf_token %}
+        <div id="selectionContainer" class='scontainer'>
+            {% for item in vehicles %}
+                {% if selected_id and selected_id == item.id%}
+                    <div id="v{{item.id}}" class="selected" onclick="setSelection('v{{item.id}}', {{item.id}})"> {{ item.tag_number }} </div>
+                {% else %}
+                    <div id="v{{item.id}}" class="selection" onclick="setSelection('v{{item.id}}', {{item.id}})"> {{ item.tag_number }} </div>
+                {%endif%}
+            {% endfor %}
+        </div>
+        <div>
+          <a href="{% url 'home' %}" class="light-blue-button">Cancel</a>
+          <button class="light-blue-button" type="button" onclick="validateAndSubmitSelection();">Next</button>
+        </div>
+      </form>
+    {%endif%}
+{% endblock %}

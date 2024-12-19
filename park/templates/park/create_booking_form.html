@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% if id %}
+	<h1 class="title1">Edit</h1>
+{% else %}
+	<h1 class="title1">Book</h1>
+{% endif %}
+<form method="POST" novalidate>
+	{% csrf_token %}
+        <div class="progress">
+          <div class="step1">
+            Select Vehicle<BR>{{vehicle.tag_number}}
+          </div>
+          <div class="step1">
+            Select Garage<BR>{{garage.name}}
+          </div>
+          <div class="step1">
+            Book<BR>&nbsp;
+          </div>
+        </div>
+	<div width="100%">
+		<div width="40%" align="center">
+			{% for field in form %}
+			<p>
+				{% if field.errors %}
+				<ul class="errorlist">
+					{% for error in field.errors %}
+					<li>{{ error }}</li>
+					{% endfor %}
+				</ul>
+				{% endif %}
+				{{ field.label_tag }} {{ field }}
+			</p>
+			{% endfor %}
+			<div>
+				<a class="light-blue-button" href="{% url 'home' %}">Home</a>
+				<a class="light-blue-button" href="{% url 'select-garage' %}">Back</a>
+				<button class="light-blue-button" type="submit">Save</button>
+			</div>
+		</div>
+	</div>
+</form>
+{% endblock content%}

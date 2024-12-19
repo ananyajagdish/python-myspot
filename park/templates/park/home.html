@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{%block content%}
+    {%if request.user.is_authenticated %}
+        {% if bookings %}
+            <h1 class="title1">My Bookings</h1>
+            <div class='bcontainer'>
+            {% for item in bookings %}
+                  <div onclick="window.location.href='{% url 'detail-booking' id=item.id %}';">
+                    {{item.parking_garage_name}}<BR>
+                    {{item.vehicle}}<BR>
+                    {{item.start_time}}<BR>
+                    {{item.end_time}}<BR>
+                    {{item.status}}<BR>
+                  </div>
+              {% endfor %}
+            </div>
+        {% endif %}
+        <div class="padding=5px"></div>
+          <a href="{% url 'select-vehicle' %}" class="light-blue-button">Start a Booking</a>
+        </div>
+        {% if vehicles %}
+          <h1 class="title1">My Vehicles</h1>
+          <div class='bcontainer'>
+            {% for item in vehicles %}
+                  <div onclick="window.location.href='{% url 'remove-vehicle' id=item.id%}';">
+                    {{item.tag_number}}<BR>
+                    {{item.year}} {{item.make}} {{item.model}}
+                  </div>
+              {% endfor %}
+            </div>
+        {% endif %}
+        <div class="padding=5px"></div>
+          <a href="{% url 'add-vehicle' %}" class="light-blue-button">Add a Vehicle</a>
+        </div>
+    {%endif%}
+{%endblock content%}
